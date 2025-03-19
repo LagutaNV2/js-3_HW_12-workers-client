@@ -1,0 +1,220 @@
+/* styles.css */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  font-family: Arial, sans-serif;
+}
+
+/* Основной контент */
+main {
+  flex: 1; /* Занимает всё свободное пространство */
+  /* width: 100%; */
+  padding: 1rem;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  position: relative; /* Для позиционирования loading-screen */
+}
+
+header {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  text-align: left;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-button {
+  text-decoration: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: blue;
+  font-size: 1rem;
+}
+
+.content {
+  position: relative;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0.1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content.hidden {
+  display: none;
+}
+
+/* Загрузочный экран */
+.loading-screen {
+  width: 100%;
+  /* height: calc(100% - 120px);  */
+  position: absolute; /* Позиционируем относительно main */
+  top: 0.5rem;
+  left: 0;
+  gap: 1rem;
+  padding: 2rem;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+  color: #333;
+  z-index: 1000;
+}
+
+.loading-screen p {
+  margin: 0.5rem;
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.loading-screen.hidden {
+  display: none;
+}
+
+.article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.article-body {
+  flex-grow: 1; /* Растягивается на всю доступную высоту */
+  display: flex;
+  gap: 0.5rem;
+}
+
+.article-header .title {
+  width: 60%;
+  height: 2rem;
+  background-color: #ccc;
+
+}
+.article-header h2 {
+  text-align: left;
+}
+
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.article.placeholder {
+  width: 100%;
+  min-height: 300px; /* Минимальная высота контейнера */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: none;
+}
+
+.preview-placeholder {
+  width: 30%;
+  height: 10rem;
+  flex-shrink: 0; /* Запрет сжатия */
+  /* background-color: #ccc;
+  margin-right: 1.5rem; */
+}
+
+.text-placeholder {
+  /* width: calc(70% - 1rem); */
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* 1/4 ширины превью */
+  row-gap: 0.1rem;
+  /* height: 2rem; */
+  /* background-color: #ccc; */
+  background: none;
+  margin-bottom: 0.1rem;
+}
+
+.placeholder.title {
+  width: 60%;
+  height: 2.5rem;
+  background-color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.placeholder.title,
+.preview-placeholder,
+.text-placeholder .paragraph {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: loadingAnimation 1.5s infinite linear;
+}
+
+.text-placeholder .paragraph {
+  height: 2rem;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+  /* background-color: #ccc; */
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%) !important;
+  background-size: 200% 100% !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Окно ошибки */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.retry-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.retry-button:hover {
+  background-color: #0056b3;
+}
+
+/* Футер */
+footer {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  text-align: center;
+  /* z-index: 50; */
+}
