@@ -1,11 +1,10 @@
 # Домашнее задание к занятию "12. WebWorkers, ServiceWorkers"
 
 backend: https://github.com/LagutaNV2/js-3_HW_12-workers-backend
-client:
 
-ID:
+client: https://lagutanv2.github.io/js-3_HW_12-workers-client/
 
-
+ID: [![Build status](https://ci.appveyor.com/api/projects/status/hqu9ggqo0d4fc1li?svg=true)](https://ci.appveyor.com/project/LagutaNV2/js-3-hw-12-workers-client)
 
 
 равила сдачи задания:
